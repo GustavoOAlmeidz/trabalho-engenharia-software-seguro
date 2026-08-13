@@ -2,7 +2,7 @@
 
 ## Sistema analisado
 
-Sistema de Agendamento de Consultas Médicas
+Sistema de Agendamento de Consultas Médicas.
 
 ## Integrantes
 
@@ -10,8 +10,18 @@ Sistema de Agendamento de Consultas Médicas
 - Álvaro
 - Leonardo
 
-## Descrição
+## Sobre o trabalho
 
-Este repositório contém o trabalho desenvolvido na disciplina de Engenharia de Software Seguro.
+Este repositório será utilizado para o desenvolvimento incremental do trabalho da disciplina de Engenharia de Software Seguro.
 
-O objeto de análise será um sistema hipotético de agendamento de consultas médicas, utilizado ao longo das etapas para identificação de ameaças, análise de riscos e estudo de práticas de segurança.
+O sistema escolhido para análise é um Sistema de Agendamento de Consultas Médicas.
+
+## Etapas
+
+- [ ] Etapa 1 — Casos de Abuso e Modelagem de Ameaças com STRIDE
+- [ ] Etapa 2 — Análise, Priorização e Tratamento de Riscos com NIST CSF
+- [ ] Etapa 3 — Projeto de uma Arquitetura Segura
+- [ ] Etapa 4 — Código Seguro e Testes de Segurança
+- [ ] Etapa 5 — Verificação de Vulnerabilidades
+- [ ] Etapa 6 — Monitoramento e Detecção de Intrusões
+- [ ] Etapa 7 — DevSecOps e Vídeo Final
