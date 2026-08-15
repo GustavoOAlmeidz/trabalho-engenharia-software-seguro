@@ -29,3 +29,22 @@ A segunda prática consiste em controlar tentativas consecutivas de autenticaç�
 **Requisito relacionado:**
 
 * RS01 — Limitar tentativas consecutivas de autenticação e bloquear temporariamente novas tentativas quando o limite definido for excedido.
+
+## Testes de segurança
+
+Os testes foram definidos antes da proposta de implementação, de modo que o comportamento seguro esperado esteja estabelecido previamente.
+
+### Testes da Prática 1 — Controle de autorização
+
+| Teste | Entrada ou ação | Resultado esperado |
+|---|---|---|
+| TS01 | Um paciente autenticado solicita a visualização de um agendamento pertencente à própria conta | O acesso é permitido |
+| TS02 | Um paciente autenticado tenta visualizar ou alterar um agendamento pertencente a outro paciente | A operação é recusada e a tentativa é registrada |
+
+### Testes da Prática 2 — Limitação de tentativas de autenticação
+
+| Teste | Entrada ou ação | Resultado esperado |
+|---|---|---|
+| TS03 | Um usuário informa credenciais válidas sem possuir bloqueio ativo | A autenticação é permitida e o contador de falhas é reiniciado |
+| TS04 | Um usuário excede o limite configurado de tentativas consecutivas de autenticação malsucedidas | Novas tentativas são temporariamente recusadas e o bloqueio é registrado |
+
