@@ -55,3 +55,77 @@ As ameaças identificadas na Etapa 1 foram transformadas em eventos de risco par
 | R04 | Information Disclosure | Informações pessoais ou de consultas são acessadas por usuários sem autorização | Falha no controle de acesso aos dados e recursos do sistema | 3 | 4 | 12 | Crítico |
 | R05 | Denial of Service | O serviço de agendamento torna-se indisponível devido ao excesso de requisições | Ausência de mecanismos suficientes para limitar ou controlar requisições excessivas | 3 | 3 | 9 | Alto |
 | R06 | Elevation of Privilege | Um usuário comum consegue utilizar funções administrativas | Controle inadequado de perfis e permissões nas operações administrativas | 2 | 4 | 8 | Alto |
+
+## Justificativa das avaliações
+
+### R01 — Acesso indevido à conta de um paciente
+
+**Probabilidade: 3 — Média-alta**
+
+O comprometimento de credenciais é uma situação plausível em sistemas que utilizam autenticação por usuário e senha. Credenciais podem ser obtidas por reutilização de senhas, engenharia social ou outros meios.
+
+**Impacto: 4 — Muito alto**
+
+O atacante poderia visualizar informações pessoais e realizar operações em nome do paciente, incluindo alteração ou cancelamento de agendamentos. A situação compromete a privacidade e a integridade das operações realizadas pela conta.
+
+Por essas razões, o risco recebeu pontuação 12 e foi classificado como crítico.
+
+### R02 — Alteração indevida de agendamento
+
+**Probabilidade: 3 — Média-alta**
+
+Caso a autorização das operações não verifique corretamente a relação entre o usuário autenticado e o agendamento solicitado, um usuário poderá tentar manipular identificadores para acessar recursos pertencentes a outras pessoas.
+
+**Impacto: 3 — Alto**
+
+A exploração pode resultar em alteração ou cancelamento de consultas, causando inconsistência na agenda e prejuízo aos pacientes e profissionais envolvidos.
+
+A pontuação resultante é 9, classificando o risco como alto.
+
+### R03 — Repúdio de operações realizadas
+
+**Probabilidade: 2 — Média-baixa**
+
+A situação depende da ausência ou insuficiência de registros que permitam relacionar uma operação ao usuário responsável.
+
+**Impacto: 2 — Moderado**
+
+A falta de evidências não necessariamente compromete diretamente todo o sistema, mas dificulta a investigação de incidentes, a resolução de conflitos e a identificação de responsabilidades.
+
+A pontuação resultante é 4, classificando o risco como médio.
+
+### R04 — Exposição indevida de informações
+
+**Probabilidade: 3 — Média-alta**
+
+Falhas de autorização podem permitir que um usuário autenticado acesse informações associadas a outros usuários, principalmente quando recursos são identificados diretamente nas requisições.
+
+**Impacto: 4 — Muito alto**
+
+O risco envolve exposição de dados pessoais e informações relacionadas às consultas. Além de comprometer a privacidade dos pacientes, uma ocorrência pode afetar a confiança no sistema e gerar consequências administrativas ou legais.
+
+A pontuação resultante é 12, classificando o risco como crítico.
+
+### R05 — Indisponibilidade do serviço de agendamento
+
+**Probabilidade: 3 — Média-alta**
+
+Serviços acessíveis por rede podem receber grande volume de requisições, seja por comportamento malicioso ou uso excessivo. Sem mecanismos de limitação, esse volume pode afetar os recursos disponíveis.
+
+**Impacto: 3 — Alto**
+
+A indisponibilidade impede pacientes de realizar ou cancelar agendamentos e impede médicos de consultar normalmente suas agendas.
+
+A pontuação resultante é 9, classificando o risco como alto.
+
+### R06 — Acesso indevido a funções administrativas
+
+**Probabilidade: 2 — Média-baixa**
+
+A exploração depende da existência de falhas específicas no controle de autorização, como a validação inadequada do perfil do usuário antes da execução de operações administrativas.
+
+**Impacto: 4 — Muito alto**
+
+Caso seja explorada, a falha poderá permitir o gerenciamento indevido de médicos, horários e agendamentos. O atacante poderia realizar alterações com efeito sobre vários usuários e comprometer operações importantes do sistema.
+
+A pontuação resultante é 8, classificando o risco como alto.
