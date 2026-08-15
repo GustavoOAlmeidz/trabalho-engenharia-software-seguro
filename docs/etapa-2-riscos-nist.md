@@ -256,3 +256,18 @@ Esse conjunto de controles está diretamente relacionado ao R04.
 Por fim, deverão ser implementados mecanismos de limitação de requisições, monitoramento e recuperação do serviço para reduzir o R05.
 
 Essa ordem poderá ser revista conforme os controles forem detalhados e verificados nas próximas etapas.
+
+## Estimativa do risco residual
+
+Os níveis abaixo representam uma estimativa do risco esperado após a implementação e validação dos controles propostos. Não representam uma redução já comprovada.
+
+| Risco | Nível inicial | Nível residual esperado | Condição para aceitar o residual |
+|---|---|---|---|
+| R01 | Crítico | Médio | Controles de autenticação implementados, testados e tentativas suspeitas registradas |
+| R02 | Alto | Médio | Autorização validada no servidor e testes impedindo alteração de agendamentos de terceiros |
+| R03 | Médio | Baixo | Operações relevantes registradas de forma consistente e registros protegidos contra alterações indevidas |
+| R04 | Crítico | Médio | Testes comprovando que usuários não conseguem acessar informações pertencentes a terceiros |
+| R05 | Alto | Médio | Limitação de requisições, monitoramento e procedimentos de recuperação verificados |
+| R06 | Alto | Médio | Controle de acesso por perfil aplicado e testes comprovando a negação de funções administrativas a usuários comuns |
+
+Mesmo após a implementação dos controles, os riscos não serão considerados eliminados. O nível residual deverá ser reavaliado com base nos resultados de testes e nas evidências obtidas.
