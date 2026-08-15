@@ -222,3 +222,37 @@ As funções representam resultados de segurança esperados e não devem ser con
 | R04 | Reduzir | Validar autorização em todas as consultas de dados; retornar apenas informações necessárias ao usuário; registrar acessos a informações sensíveis | Govern, Identify, Protect, Detect, Respond | Desenvolvimento e segurança | Testes de acesso entre usuários diferentes e revisão das respostas retornadas pelo sistema |
 | R05 | Reduzir | Aplicar limitação de requisições; definir limites de tempo para operações; monitorar volume de requisições e disponibilidade do serviço | Identify, Protect, Detect, Respond, Recover | Desenvolvimento e infraestrutura | Testes de carga controlados, métricas de disponibilidade e registros de requisições |
 | R06 | Reduzir | Implementar controle de acesso baseado em perfis; negar operações por padrão quando não houver permissão; validar autorização no servidor em todas as funções administrativas | Govern, Protect, Detect, Respond | Desenvolvimento e segurança | Testes de autorização com diferentes perfis e revisão dos registros de operações administrativas |
+
+## Ordem inicial de implementação dos controles
+
+A implementação dos controles deverá considerar a criticidade dos riscos, as dependências entre as medidas e a possibilidade de um mesmo controle reduzir mais de um risco.
+
+### 1. Controle de autorização
+
+A primeira prioridade será garantir que todas as operações protegidas validem as permissões do usuário no servidor.
+
+Esse controle contribui principalmente para o tratamento de R02, R04 e R06, reduzindo alterações indevidas, exposição de informações e uso não autorizado de funções administrativas.
+
+### 2. Proteção do processo de autenticação
+
+Em seguida deverão ser implementados controles relacionados à autenticação, como proteção das credenciais, limitação de tentativas e gerenciamento adequado das sessões.
+
+Essas medidas estão diretamente relacionadas ao R01.
+
+### 3. Registro e auditoria de operações
+
+Depois deverão ser implementados registros das operações relevantes, principalmente autenticações, alterações de agendamento, acessos administrativos e tentativas negadas.
+
+Esse controle trata diretamente o R03 e também contribui para a detecção e investigação dos demais riscos.
+
+### 4. Proteção contra exposição de informações
+
+As respostas e consultas do sistema deverão ser revisadas para garantir que cada usuário receba apenas as informações necessárias e autorizadas.
+
+Esse conjunto de controles está diretamente relacionado ao R04.
+
+### 5. Proteção da disponibilidade
+
+Por fim, deverão ser implementados mecanismos de limitação de requisições, monitoramento e recuperação do serviço para reduzir o R05.
+
+Essa ordem poderá ser revista conforme os controles forem detalhados e verificados nas próximas etapas.
