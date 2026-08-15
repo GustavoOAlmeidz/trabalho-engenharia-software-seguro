@@ -72,3 +72,22 @@ Sua ausência não significa que a aplicação possua automaticamente uma vulner
 
 A correção consiste em definir uma política CSP adequada ao funcionamento da aplicação, permitindo somente as origens e tipos de conteúdo necessários.
 
+## Limitações da verificação
+
+A verificação realizada utilizou o ZAP Baseline Scan, baseado principalmente em análise passiva das respostas observadas durante a navegação automatizada.
+
+Os alertas identificados não devem ser considerados automaticamente como vulnerabilidades exploráveis. Cada resultado precisa ser interpretado considerando o contexto da aplicação.
+
+Também podem existir vulnerabilidades que não foram identificadas por essa execução, especialmente aquelas que dependem de autenticação, estados específicos da aplicação, lógica de negócio ou testes ativos.
+
+Os resultados informativos, duplicados ou que não apresentaram relevância suficiente para o objetivo desta etapa não foram selecionados para análise detalhada.
+
+## Considerações finais
+
+A execução do OWASP ZAP sobre o OWASP Juice Shop permitiu observar, em um ambiente controlado e autorizado, como uma ferramenta automatizada pode auxiliar na identificação de configurações e comportamentos potencialmente inseguros.
+
+Foram selecionados para análise três alertas relacionados a mecanismos de proteção do navegador: ausência de proteção contra clickjacking, ausência do cabeçalho `X-Content-Type-Options` e ausência de uma política Content Security Policy.
+
+A análise demonstrou que os resultados produzidos por ferramentas automatizadas precisam ser interpretados antes que sejam tratados como vulnerabilidades confirmadas. Os alertas fornecem evidências importantes para orientar verificações posteriores e possíveis correções, mas não substituem análise manual, testes específicos e avaliação do contexto.
+
+As correções propostas envolvem principalmente a configuração adequada de cabeçalhos HTTP de segurança e a definição explícita das políticas aplicadas pelo navegador.
