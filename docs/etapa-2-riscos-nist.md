@@ -171,3 +171,43 @@ Para cada risco foi escolhida uma estratégia principal de tratamento.
 | R06 | Reduzir | Controle de acesso baseado em perfis e validação no servidor podem impedir o uso indevido de funções administrativas |
 
 A estratégia de redução foi predominante porque os riscos identificados estão relacionados a funções necessárias ao sistema. Eliminar completamente essas operações impediria o funcionamento esperado do serviço, enquanto a adoção de controles permite reduzir sua probabilidade ou impacto.
+
+## Funções do NIST Cybersecurity Framework 2.0
+
+Os riscos e controles serão relacionados às seis funções do NIST Cybersecurity Framework 2.0.
+
+| Função | Finalidade |
+|---|---|
+| Govern | Definir políticas, responsabilidades, prioridades e critérios de decisão |
+| Identify | Conhecer ativos, dependências, vulnerabilidades e riscos |
+| Protect | Implementar salvaguardas para reduzir a probabilidade ou o impacto |
+| Detect | Identificar eventos suspeitos, falhas e possíveis incidentes |
+| Respond | Conter, analisar, comunicar e tratar incidentes |
+| Recover | Restaurar serviços e dados e reduzir os prejuízos causados |
+
+As funções representam resultados de segurança esperados e não devem ser confundidas com controles específicos. Por exemplo, Protect representa uma função, enquanto a validação de autorização antes de uma operação é um controle que pode contribuir para essa função.
+
+## Mapeamento dos riscos para o NIST CSF
+
+| Risco | Govern | Identify | Protect | Detect | Respond | Recover |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| R01 | X |  | X | X | X |  |
+| R02 |  |  | X | X | X | X |
+| R03 | X |  |  | X | X |  |
+| R04 | X | X | X | X | X |  |
+| R05 |  | X | X | X | X | X |
+| R06 | X |  | X | X | X |  |
+
+### Justificativa do mapeamento
+
+**R01:** exige políticas de autenticação e responsabilidades, mecanismos de proteção das contas, detecção de acessos suspeitos e resposta em caso de comprometimento.
+
+**R02:** necessita de proteção das operações, detecção de alterações indevidas, resposta ao incidente e possibilidade de recuperação de informações ou agendamentos alterados.
+
+**R03:** envolve definição de responsabilidades e registros capazes de detectar e permitir a investigação de operações realizadas.
+
+**R04:** exige identificação dos dados que precisam ser protegidos, políticas de acesso, controles preventivos, detecção de acessos indevidos e resposta em caso de exposição.
+
+**R05:** exige conhecimento dos recursos e dependências necessários ao funcionamento do serviço, mecanismos de proteção contra sobrecarga, detecção, resposta e recuperação da disponibilidade.
+
+**R06:** exige regras de governança sobre privilégios, controles de autorização, detecção de tentativas indevidas e resposta a possíveis comprometimentos.
