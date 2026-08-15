@@ -84,3 +84,65 @@ A análise a seguir utiliza o modelo STRIDE para identificar ameaças relacionad
 | T04 | Information Disclosure | Dados pessoais e consultas | Um usuário consegue visualizar informações de consultas pertencentes a outra pessoa | Exposição indevida de informações pessoais e violação de privacidade |
 | T05 | Denial of Service | Serviço de agendamento | Um atacante envia grande quantidade de requisições para impedir ou degradar o acesso ao sistema | Indisponibilidade do serviço e impossibilidade de realizar ou consultar agendamentos |
 | T06 | Elevation of Privilege | Perfis e permissões | Um paciente explora uma falha de autorização e consegue acessar funções reservadas ao administrador | Alteração de médicos, horários ou agendamentos sem autorização |
+
+## Casos de abuso
+
+### CA01 — Acesso à conta de outro paciente
+
+**Ator:** atacante externo.
+
+**Objetivo:** acessar dados e operações pertencentes a outro paciente.
+
+**Condições necessárias:** o atacante obtém ou descobre as credenciais válidas de uma conta.
+
+**Fluxo de abuso:**
+
+1. O atacante obtém as credenciais de um paciente.
+2. Utiliza as credenciais na autenticação.
+3. O sistema reconhece o atacante como o paciente legítimo.
+4. O atacante acessa informações e agendamentos da vítima.
+5. O atacante pode visualizar, alterar ou cancelar agendamentos.
+
+**Impacto:** exposição de dados pessoais e realização de ações indevidas em nome do paciente.
+
+**Categorias STRIDE relacionadas:** Spoofing e Information Disclosure.
+
+### CA02 — Alteração indevida de agendamento
+
+**Ator:** usuário autenticado mal-intencionado.
+
+**Objetivo:** alterar ou cancelar um agendamento pertencente a outro paciente.
+
+**Condições necessárias:** existência de uma falha no controle de autorização das operações de agendamento.
+
+**Fluxo de abuso:**
+
+1. O usuário autentica-se normalmente no sistema.
+2. Identifica ou modifica o identificador de um agendamento que pertence a outro paciente.
+3. Envia uma solicitação de alteração ou cancelamento.
+4. O sistema não verifica corretamente se o agendamento pertence ao usuário.
+5. A operação é realizada indevidamente.
+
+**Impacto:** cancelamento ou alteração de consultas, inconsistência da agenda e prejuízo ao paciente afetado.
+
+**Categorias STRIDE relacionadas:** Tampering e Elevation of Privilege.
+
+### CA03 — Sobrecarga do serviço de agendamento
+
+**Ator:** atacante externo.
+
+**Objetivo:** tornar o sistema indisponível ou dificultar seu uso.
+
+**Condições necessárias:** possibilidade de realizar grande quantidade de requisições sem mecanismos suficientes de limitação.
+
+**Fluxo de abuso:**
+
+1. O atacante automatiza o envio de requisições ao sistema.
+2. Um grande volume de solicitações é enviado em um curto período.
+3. Os recursos disponíveis são consumidos pelo tráfego excessivo.
+4. Usuários legítimos passam a enfrentar lentidão ou indisponibilidade.
+5. Pacientes e médicos deixam de conseguir utilizar normalmente o serviço.
+
+**Impacto:** indisponibilidade, degradação do atendimento e impossibilidade de realizar operações de agendamento.
+
+**Categorias STRIDE relacionadas:** Denial of Service.
