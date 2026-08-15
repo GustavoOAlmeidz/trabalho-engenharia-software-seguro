@@ -271,3 +271,19 @@ Os níveis abaixo representam uma estimativa do risco esperado após a implement
 | R06 | Alto | Médio | Controle de acesso por perfil aplicado e testes comprovando a negação de funções administrativas a usuários comuns |
 
 Mesmo após a implementação dos controles, os riscos não serão considerados eliminados. O nível residual deverá ser reavaliado com base nos resultados de testes e nas evidências obtidas.
+
+## Considerações finais
+
+A análise demonstrou que os riscos de maior prioridade estão relacionados ao comprometimento de contas, à exposição de informações e ao acesso indevido a funções privilegiadas.
+
+Os riscos R01 e R04 foram classificados como críticos devido à combinação entre probabilidade de ocorrência e impacto sobre os usuários e suas informações. O R06, apesar de possuir pontuação inferior a outros riscos classificados como altos, recebeu prioridade elevada devido ao alcance que permissões administrativas indevidas podem proporcionar.
+
+A estratégia predominante foi a redução dos riscos por meio da aplicação de controles específicos de autenticação, autorização, auditoria, proteção de dados e disponibilidade.
+
+Entre as funções do NIST CSF 2.0, Protect e Detect possuem presença relevante no plano definido, pois grande parte dos riscos exige tanto medidas preventivas quanto capacidade de identificação de comportamentos suspeitos. Govern, Identify, Respond e Recover também foram relacionados conforme as características de cada risco.
+
+Os controles considerados mais importantes são a validação de autorização no servidor, a proteção do processo de autenticação, o registro de operações relevantes e a restrição do acesso às informações.
+
+A principal limitação desta análise é que o sistema não está implementado. Dessa forma, os valores de probabilidade, impacto e risco residual representam estimativas baseadas no funcionamento definido para o sistema e deverão ser revisados caso existam novas informações ou evidências.
+
+As próximas etapas deverão transformar os riscos prioritários e os controles propostos em requisitos de segurança e decisões de arquitetura.
