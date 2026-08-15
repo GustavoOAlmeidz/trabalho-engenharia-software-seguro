@@ -129,3 +129,30 @@ A exploração depende da existência de falhas específicas no controle de auto
 Caso seja explorada, a falha poderá permitir o gerenciamento indevido de médicos, horários e agendamentos. O atacante poderia realizar alterações com efeito sobre vários usuários e comprometer operações importantes do sistema.
 
 A pontuação resultante é 8, classificando o risco como alto.
+
+## Priorização dos riscos
+
+A priorização considera não apenas a pontuação calculada, mas também a importância dos ativos afetados, a quantidade potencial de usuários impactados, a gravidade das consequências e a possibilidade de recuperação.
+
+| Prioridade | Risco | Pontuação | Nível |
+|---:|---|---:|---|
+| 1 | R01 — Acesso indevido à conta de um paciente | 12 | Crítico |
+| 2 | R04 — Exposição indevida de informações | 12 | Crítico |
+| 3 | R06 — Acesso indevido a funções administrativas | 8 | Alto |
+| 4 | R05 — Indisponibilidade do serviço de agendamento | 9 | Alto |
+| 5 | R02 — Alteração indevida de agendamento | 9 | Alto |
+| 6 | R03 — Repúdio de operações realizadas | 4 | Médio |
+
+### Justificativa da priorização
+
+O R01 recebeu a maior prioridade porque o comprometimento de uma conta permite que um atacante se passe por um usuário legítimo, acesse informações pessoais e realize operações em seu nome.
+
+O R04 aparece em seguida porque envolve diretamente a exposição de informações pessoais e dados relacionados às consultas, apresentando impacto elevado sobre a privacidade dos usuários.
+
+Embora o R06 tenha pontuação inferior a R05 e R02, foi colocado antes deles porque a obtenção de privilégios administrativos pode permitir alterações com alcance maior, afetando médicos, horários e diversos agendamentos.
+
+O R05 possui alta prioridade devido ao impacto da indisponibilidade sobre pacientes e médicos que dependem do sistema.
+
+O R02 também possui nível alto, porém normalmente afeta inicialmente agendamentos específicos, apresentando alcance menor do que os riscos anteriores.
+
+O R03 foi classificado por último por possuir impacto mais limitado e não causar, isoladamente, comprometimento imediato da confidencialidade, integridade ou disponibilidade do serviço.
