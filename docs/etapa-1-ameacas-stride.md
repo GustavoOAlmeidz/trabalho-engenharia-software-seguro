@@ -6,8 +6,6 @@
 
 **Integrantes:**
 - Gustavo
-- Álvaro
-- Leonardo
 
 **Repositório:** [https://github.com/GustavoOAlmeidz/trabalho-engenharia-software-seguro]
 
@@ -59,3 +57,13 @@ Os principais pontos de interação considerados na análise são:
 - criação e cancelamento de agendamentos;
 - visualização da agenda médica;
 - operações administrativas de gerenciamento.
+
+## Visão geral do fluxo
+
+O paciente acessa o sistema para consultar médicos e horários disponíveis. Após selecionar uma opção, poderá realizar o agendamento de uma consulta ou cancelar um agendamento existente.
+
+O médico utiliza o sistema principalmente para consultar sua agenda e visualizar as consultas programadas.
+
+O administrador possui funções de gerenciamento, podendo administrar médicos, horários disponíveis e agendamentos.
+
+Essa visão simplificada será utilizada como base para identificar os pontos em que ameaças de segurança podem ocorrer.

@@ -7,8 +7,6 @@ Sistema de Agendamento de Consultas Médicas.
 ## Integrantes
 
 - Gustavo
-- Álvaro
-- Leonardo
 
 ## Sobre o trabalho
 
