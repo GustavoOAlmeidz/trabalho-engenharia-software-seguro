@@ -16,10 +16,14 @@ O sistema escolhido para análise é um Sistema de Agendamento de Consultas Méd
 
 ## Etapas
 
-- [ ] Etapa 1 — Casos de Abuso e Modelagem de Ameaças com STRIDE
+- [x] Etapa 1 — Casos de Abuso e Modelagem de Ameaças com STRIDE
 - [ ] Etapa 2 — Análise, Priorização e Tratamento de Riscos com NIST CSF
 - [ ] Etapa 3 — Projeto de uma Arquitetura Segura
 - [ ] Etapa 4 — Código Seguro e Testes de Segurança
 - [ ] Etapa 5 — Verificação de Vulnerabilidades
 - [ ] Etapa 6 — Monitoramento e Detecção de Intrusões
 - [ ] Etapa 7 — DevSecOps e Vídeo Final
+- 
+## Documentação
+
+- [Etapa 1 — Casos de Abuso e Modelagem de Ameaças com STRIDE](docs/etapa-1-ameacas-stride.md)
