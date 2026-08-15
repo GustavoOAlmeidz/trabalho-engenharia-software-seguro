@@ -31,3 +31,37 @@ As operações relevantes também geram eventos para registro e monitoramento, p
 ### Diagrama da arquitetura
 
 ![Diagrama da arquitetura segura](../diagramas/arquitetura-segura.png)
+
+## Decisões de arquitetura
+
+As decisões arquiteturais abaixo foram definidas a partir dos riscos prioritários e dos requisitos de segurança estabelecidos nesta etapa.
+
+### DA01 — Limitação de tentativas de autenticação
+
+| Campo | Descrição |
+|---|---|
+| Risco tratado | R01 — Acesso indevido à conta de um paciente |
+| Decisão | O mecanismo de autenticação deverá controlar tentativas consecutivas malsucedidas e aplicar bloqueio temporário quando o limite configurado for excedido |
+| Motivo | Permitir tentativas ilimitadas facilita ataques automatizados de adivinhação de credenciais |
+| Componente afetado | Autenticação |
+| Resultado esperado | Reduzir a possibilidade de comprometimento de contas por sucessivas tentativas de autenticação |
+
+### DA02 — Autorização vinculada ao recurso solicitado
+
+| Campo | Descrição |
+|---|---|
+| Risco tratado | R04 — Exposição indevida de informações |
+| Decisão | Toda solicitação de acesso a consultas e agendamentos deverá verificar no servidor se o usuário possui permissão sobre o recurso solicitado |
+| Motivo | Estar autenticado não significa possuir autorização para acessar recursos pertencentes a outros usuários |
+| Componente afetado | Autorização e regras de agendamento |
+| Resultado esperado | Impedir que a manipulação de identificadores permita acesso a informações pertencentes a terceiros |
+
+### DA03 — Validação de permissões administrativas no servidor
+
+| Campo | Descrição |
+|---|---|
+| Risco tratado | R06 — Acesso indevido a funções administrativas |
+| Decisão | Todas as operações administrativas deverão validar o perfil e as permissões do usuário no servidor, adotando negação por padrão quando não existir autorização explícita |
+| Motivo | Ocultar funções administrativas na interface não impede que um usuário tente acessar diretamente as operações protegidas |
+| Componente afetado | Autorização |
+| Resultado esperado | Impedir que pacientes ou médicos sem permissão executem funções administrativas |
