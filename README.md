@@ -21,7 +21,7 @@ O sistema escolhido para análise é um Sistema de Agendamento de Consultas Méd
 - [x] Etapa 3 — Projeto de uma Arquitetura Segura
 - [x] Etapa 4 — Código Seguro e Testes de Segurança
 - [x] Etapa 5 — Verificação de Vulnerabilidades
-- [ ] Etapa 6 — Monitoramento e Detecção de Intrusões
+- [x] Etapa 6 — Monitoramento e Detecção de Intrusões
 - [ ] Etapa 7 — DevSecOps e Vídeo Final
 - 
 ## Documentação
@@ -31,4 +31,5 @@ O sistema escolhido para análise é um Sistema de Agendamento de Consultas Méd
 - [Etapa 3 — Projeto de uma Arquitetura Segura](docs/etapa-3-arquitetura-segura.md)
 - [Etapa 4 — Código Seguro e Testes de Segurança](docs/etapa-4-codigo-seguro.md)
 - [Etapa 5 — Verificação de Vulnerabilidades ](evidencia/etapa-5/relatorio-da-verificacao.md)
-- 
+- [Etapa 6 — Monitoramento e Detecção de Intrusões](roteiros/etapa-6-deteccao-de-intrusoes.md)
+- [Etapa 7 — DevSecOps e Vídeo Final](roteiros/etapa-7-devsecops-e-video-final.md)
