@@ -113,3 +113,55 @@ Resultado esperado: somente usuários explicitamente autorizados poderão acessa
 Requisições sem permissão deverão ser recusadas independentemente das opções exibidas pela interface.
 
 Referência utilizada: OWASP Cheat Sheet Series — Authorization Cheat Sheet.
+
+### Prática 2 — Limitação de tentativas de autenticação
+
+O processo de autenticação deverá controlar a quantidade de tentativas consecutivas malsucedidas associadas à conta do usuário.
+
+Quando o limite configurado for excedido, novas tentativas deverão ser temporariamente bloqueadas. Falhas de autenticação e bloqueios deverão ser registrados para permitir monitoramento posterior.
+
+```text
+FUNÇÃO autenticar(identificador, senha)
+
+    usuario = buscarUsuario(identificador)
+
+    SE usuario NÃO existir
+        registrar falha de autenticação
+        RETORNAR credenciais inválidas
+    FIM
+
+    SE usuario.bloqueadoAte > horarioAtual
+        registrar tentativa durante bloqueio
+        NEGAR autenticação
+    FIM
+
+    SE senha estiver correta
+        usuario.tentativasFalhas = 0
+        registrar autenticação bem-sucedida
+        PERMITIR autenticação
+    FIM
+
+    usuario.tentativasFalhas =
+        usuario.tentativasFalhas + 1
+
+    registrar falha de autenticação
+
+    SE usuario.tentativasFalhas >= LIMITE_TENTATIVAS
+        usuario.bloqueadoAte =
+            horarioAtual + PERIODO_BLOQUEIO
+
+        registrar bloqueio temporário
+    FIM
+
+    RETORNAR credenciais inválidas
+
+FIM
+```
+O valor de LIMITE_TENTATIVAS e a duração de PERIODO_BLOQUEIO deverão ser definidos por configuração, permitindo ajustes sem alteração da lógica principal.
+
+O contador de tentativas deverá estar associado à conta do usuário, evitando que a proteção dependa somente do endereço de origem da requisição.
+
+Resultado esperado: sucessivas tentativas de autenticação malsucedidas não poderão continuar indefinidamente, reduzindo a possibilidade de ataques automatizados de adivinhação de credenciais.
+
+Referência utilizada: OWASP Cheat Sheet Series — Authentication Cheat Sheet.
+
