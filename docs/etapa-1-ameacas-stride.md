@@ -146,3 +146,15 @@ A análise a seguir utiliza o modelo STRIDE para identificar ameaças relacionad
 **Impacto:** indisponibilidade, degradação do atendimento e impossibilidade de realizar operações de agendamento.
 
 **Categorias STRIDE relacionadas:** Denial of Service.
+
+## Considerações finais
+
+A análise identificou como ameaças relevantes o acesso indevido a contas, a alteração não autorizada de agendamentos, a exposição de informações e a obtenção indevida de permissões administrativas.
+
+Entre os ativos mais importantes estão as credenciais dos usuários, os dados pessoais, as informações dos agendamentos e os perfis de acesso.
+
+Os casos de abuso demonstram que falhas de autenticação, autorização, registro de atividades e disponibilidade podem comprometer tanto a privacidade dos usuários quanto o funcionamento do serviço.
+
+A principal dificuldade desta etapa foi transformar as categorias gerais do STRIDE em situações concretas relacionadas ao contexto de um sistema de agendamento de consultas médicas.
+
+As ameaças identificadas servirão como base para a análise e priorização dos riscos na próxima etapa.
