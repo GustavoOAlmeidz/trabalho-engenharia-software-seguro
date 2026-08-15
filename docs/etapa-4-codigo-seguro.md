@@ -165,3 +165,42 @@ Resultado esperado: sucessivas tentativas de autenticação malsucedidas não po
 
 Referência utilizada: OWASP Cheat Sheet Series — Authentication Cheat Sheet.
 
+## Resultados esperados
+
+A aplicação das duas práticas deverá contribuir diretamente para a redução dos riscos prioritários identificados nas etapas anteriores.
+
+### Controle de autorização
+
+Espera-se que:
+
+- usuários não consigam acessar agendamentos pertencentes a outros usuários sem autorização;
+- pacientes e médicos não consigam executar funções administrativas;
+- operações sem autorização explícita sejam recusadas;
+- tentativas de acesso indevido sejam registradas.
+
+Esses resultados contribuem para reduzir principalmente os riscos R04 e R06 e atendem aos requisitos RS02 e RS03.
+
+### Limitação de tentativas de autenticação
+
+Espera-se que:
+
+- autenticações válidas continuem funcionando normalmente;
+- tentativas malsucedidas sejam contabilizadas;
+- contas que excedam o limite configurado recebam bloqueio temporário;
+- tentativas e bloqueios sejam registrados;
+- uma autenticação válida após o término do bloqueio possa ocorrer normalmente.
+
+Esses resultados contribuem para reduzir o risco R01 e atender ao requisito RS01.
+
+## Referências utilizadas
+
+- OWASP Cheat Sheet Series — Authorization Cheat Sheet.
+- OWASP Cheat Sheet Series — Authentication Cheat Sheet.
+
+## Considerações finais
+
+As práticas selecionadas demonstram como os requisitos e decisões de segurança definidos nas etapas anteriores podem ser transformados em comportamentos concretos de implementação.
+
+O controle de autorização busca impedir que um usuário autenticado utilize recursos ou funções para os quais não possui permissão. Já a limitação de tentativas de autenticação busca dificultar ataques automatizados contra contas de usuários.
+
+Os testes foram definidos antes dos pseudocódigos para estabelecer previamente os comportamentos seguros esperados. Como o sistema analisado não está implementado, os resultados apresentados representam o comportamento que deverá ser verificado caso essas práticas sejam implementadas em uma aplicação real.
