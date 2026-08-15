@@ -156,3 +156,18 @@ O R05 possui alta prioridade devido ao impacto da indisponibilidade sobre pacien
 O R02 também possui nível alto, porém normalmente afeta inicialmente agendamentos específicos, apresentando alcance menor do que os riscos anteriores.
 
 O R03 foi classificado por último por possuir impacto mais limitado e não causar, isoladamente, comprometimento imediato da confidencialidade, integridade ou disponibilidade do serviço.
+
+## Estratégias de tratamento
+
+Para cada risco foi escolhida uma estratégia principal de tratamento.
+
+| Risco | Estratégia | Justificativa |
+|---|---|---|
+| R01 | Reduzir | Controles adicionais de autenticação podem diminuir a probabilidade de acesso indevido às contas |
+| R02 | Reduzir | A validação de autorização e propriedade dos recursos pode impedir alterações indevidas |
+| R03 | Reduzir | Registros de auditoria podem fornecer evidências sobre as operações realizadas |
+| R04 | Reduzir | Controles de autorização e restrição de acesso podem limitar a exposição de informações |
+| R05 | Reduzir | Limitação de requisições e monitoramento podem diminuir a possibilidade e o impacto da sobrecarga |
+| R06 | Reduzir | Controle de acesso baseado em perfis e validação no servidor podem impedir o uso indevido de funções administrativas |
+
+A estratégia de redução foi predominante porque os riscos identificados estão relacionados a funções necessárias ao sistema. Eliminar completamente essas operações impediria o funcionamento esperado do serviço, enquanto a adoção de controles permite reduzir sua probabilidade ou impacto.
