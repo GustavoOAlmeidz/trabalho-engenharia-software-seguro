@@ -13,3 +13,6 @@ Thumbs.db
 # Variáveis de ambiente
 .env
 .env.*
+
+# Arquivos temporários do OWASP ZAP
+zap.yaml
