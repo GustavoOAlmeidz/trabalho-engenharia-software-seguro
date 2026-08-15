@@ -48,3 +48,68 @@ Os testes foram definidos antes da proposta de implementação, de modo que o co
 | TS03 | Um usuário informa credenciais válidas sem possuir bloqueio ativo | A autenticação é permitida e o contador de falhas é reiniciado |
 | TS04 | Um usuário excede o limite configurado de tentativas consecutivas de autenticação malsucedidas | Novas tentativas são temporariamente recusadas e o bloqueio é registrado |
 
+## Implementação/pseudocódigo
+
+### Prática 1 — Controle de autorização
+
+A autorização deverá ser verificada no servidor antes do acesso ao recurso solicitado. A simples autenticação do usuário não é suficiente para determinar se ele possui permissão sobre determinado agendamento.
+
+O controle deverá adotar negação por padrão quando as condições necessárias de autorização não forem atendidas.
+
+```text
+FUNÇÃO visualizarAgendamento(usuario, idAgendamento)
+
+    SE usuario NÃO estiver autenticado
+        registrar tentativa negada
+        NEGAR acesso
+    FIM
+
+    agendamento = buscarAgendamento(idAgendamento)
+
+    SE agendamento NÃO existir
+        RETORNAR recurso não encontrado
+    FIM
+
+    SE usuario.perfil == ADMINISTRADOR
+        PERMITIR acesso
+    FIM
+
+    SE usuario.perfil == PACIENTE E
+       agendamento.pacienteId == usuario.id
+        PERMITIR acesso
+    FIM
+
+    SE usuario.perfil == MEDICO E
+       agendamento.medicoId == usuario.id
+        PERMITIR acesso
+    FIM
+
+    registrar tentativa de acesso não autorizado
+    NEGAR acesso
+
+FIM
+```
+Para operações administrativas, o mesmo princípio deverá ser aplicado
+
+```text
+FUNÇÃO executarOperacaoAdministrativa(usuario, operacao)
+
+    SE usuario NÃO estiver autenticado
+        NEGAR operação
+    FIM
+
+    SE usuario.perfil != ADMINISTRADOR
+        registrar tentativa não autorizada
+        NEGAR operação
+    FIM
+
+    executar operacao
+    registrar operação realizada
+
+FIM
+```
+
+Resultado esperado: somente usuários explicitamente autorizados poderão acessar recursos ou executar operações protegidas. 
+Requisições sem permissão deverão ser recusadas independentemente das opções exibidas pela interface.
+
+Referência utilizada: OWASP Cheat Sheet Series — Authorization Cheat Sheet.
