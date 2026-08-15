@@ -211,3 +211,14 @@ As funções representam resultados de segurança esperados e não devem ser con
 **R05:** exige conhecimento dos recursos e dependências necessários ao funcionamento do serviço, mecanismos de proteção contra sobrecarga, detecção, resposta e recuperação da disponibilidade.
 
 **R06:** exige regras de governança sobre privilégios, controles de autorização, detecção de tentativas indevidas e resposta a possíveis comprometimentos.
+
+## Plano de tratamento dos riscos
+
+| Risco | Estratégia | Controles propostos | Funções relacionadas | Responsáveis | Evidências e verificação |
+|---|---|---|---|---|---|
+| R01 | Reduzir | Limitar tentativas de autenticação; armazenar senhas de forma segura; encerrar sessões após período de inatividade; utilizar autenticação adicional em contas privilegiadas | Govern, Protect, Detect, Respond | Desenvolvimento e segurança | Testes de autenticação, registros de tentativas, testes de sessão e revisão das configurações |
+| R02 | Reduzir | Validar no servidor se o usuário possui permissão sobre o agendamento antes de permitir alteração ou cancelamento; registrar alterações realizadas | Protect, Detect, Respond, Recover | Desenvolvimento | Testes com usuários tentando alterar agendamentos próprios e de terceiros; análise dos logs |
+| R03 | Reduzir | Registrar usuário, operação, recurso afetado, data, horário e resultado das operações relevantes; proteger registros contra alteração indevida | Govern, Detect, Respond | Desenvolvimento e infraestrutura | Inspeção dos logs e simulação de operações para verificar a geração correta dos registros |
+| R04 | Reduzir | Validar autorização em todas as consultas de dados; retornar apenas informações necessárias ao usuário; registrar acessos a informações sensíveis | Govern, Identify, Protect, Detect, Respond | Desenvolvimento e segurança | Testes de acesso entre usuários diferentes e revisão das respostas retornadas pelo sistema |
+| R05 | Reduzir | Aplicar limitação de requisições; definir limites de tempo para operações; monitorar volume de requisições e disponibilidade do serviço | Identify, Protect, Detect, Respond, Recover | Desenvolvimento e infraestrutura | Testes de carga controlados, métricas de disponibilidade e registros de requisições |
+| R06 | Reduzir | Implementar controle de acesso baseado em perfis; negar operações por padrão quando não houver permissão; validar autorização no servidor em todas as funções administrativas | Govern, Protect, Detect, Respond | Desenvolvimento e segurança | Testes de autorização com diferentes perfis e revisão dos registros de operações administrativas |
