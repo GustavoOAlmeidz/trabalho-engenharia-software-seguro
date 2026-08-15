@@ -67,3 +67,7 @@ O médico utiliza o sistema principalmente para consultar sua agenda e visualiza
 O administrador possui funções de gerenciamento, podendo administrar médicos, horários disponíveis e agendamentos.
 
 Essa visão simplificada será utilizada como base para identificar os pontos em que ameaças de segurança podem ocorrer.
+
+### Diagrama de casos de uso
+
+![Diagrama de casos de uso](../diagramas/casos-de-uso.png)
