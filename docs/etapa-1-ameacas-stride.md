@@ -71,3 +71,16 @@ Essa visão simplificada será utilizada como base para identificar os pontos em
 ### Diagrama de casos de uso
 
 ![Diagrama de casos de uso](../diagramas/casos-de-uso.png)
+
+## Modelagem de ameaças com STRIDE
+
+A análise a seguir utiliza o modelo STRIDE para identificar ameaças relacionadas ao funcionamento do sistema.
+
+| ID | Categoria STRIDE | Componente ou ativo | Ameaça identificada | Possível impacto |
+|---|---|---|---|---|
+| T01 | Spoofing | Conta de usuário | Um atacante obtém as credenciais de um paciente e acessa o sistema se passando por ele | Acesso indevido a dados pessoais, visualização e alteração de agendamentos |
+| T02 | Tampering | Agendamento | Um usuário manipula uma solicitação para alterar ou cancelar um agendamento que não lhe pertence | Alteração indevida da agenda, perda de consultas e inconsistência das informações |
+| T03 | Repudiation | Registro de operações | Um usuário realiza o cancelamento de uma consulta e posteriormente nega ter realizado a ação | Dificuldade de identificar o responsável e de investigar incidentes |
+| T04 | Information Disclosure | Dados pessoais e consultas | Um usuário consegue visualizar informações de consultas pertencentes a outra pessoa | Exposição indevida de informações pessoais e violação de privacidade |
+| T05 | Denial of Service | Serviço de agendamento | Um atacante envia grande quantidade de requisições para impedir ou degradar o acesso ao sistema | Indisponibilidade do serviço e impossibilidade de realizar ou consultar agendamentos |
+| T06 | Elevation of Privilege | Perfis e permissões | Um paciente explora uma falha de autorização e consegue acessar funções reservadas ao administrador | Alteração de médicos, horários ou agendamentos sem autorização |
