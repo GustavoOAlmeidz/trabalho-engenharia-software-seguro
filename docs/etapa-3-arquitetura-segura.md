@@ -21,3 +21,13 @@ Para cada requisito de segurança foi identificada uma fraqueza relacionada no c
 | R01 | RS01 | CWE-307 — Improper Restriction of Excessive Authentication Attempts | MITRE CWE | A ausência de limitação de tentativas pode permitir sucessivas tentativas de autenticação contra uma conta de usuário |
 | R04 | RS02 | CWE-639 — Authorization Bypass Through User-Controlled Key | MITRE CWE | A manipulação do identificador de uma consulta ou agendamento pode permitir acesso a informações pertencentes a outro usuário caso a autorização não seja verificada |
 | R06 | RS03 | CWE-862 — Missing Authorization | MITRE CWE | A ausência de verificação de autorização em uma operação administrativa pode permitir que usuários sem permissão utilizem funções privilegiadas |
+
+## Arquitetura segura proposta
+
+A arquitetura proposta posiciona os controles de autenticação e autorização antes da execução das regras de negócio e do acesso aos dados.
+
+As operações relevantes também geram eventos para registro e monitoramento, permitindo posteriormente identificar comportamentos suspeitos e apoiar a investigação de incidentes.
+
+### Diagrama da arquitetura
+
+![Diagrama da arquitetura segura](../diagramas/arquitetura-segura.png)
